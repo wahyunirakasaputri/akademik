@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a5c599d-ad7e-481d-aa0d-c871db92b815">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT input_sks.kode_matkul,matkul.nama_matkul,matkul.nip,matkul.hari,matkul.jam,matkul.ruangan,matkul.kelas,matkul.sks,matkul.semester FROM input_sks INNER JOIN matkul ON matkul.kode_matkul=input_sks.kode_matkul WHERE input_sks.stb='152194']]>
+	</queryString>
+	<field name="kode_matkul" class="java.lang.String"/>
+	<field name="nama_matkul" class="java.lang.String"/>
+	<field name="nip" class="java.lang.Integer"/>
+	<field name="hari" class="java.lang.String"/>
+	<field name="jam" class="java.lang.String"/>
+	<field name="ruangan" class="java.lang.String"/>
+	<field name="kelas" class="java.lang.String"/>
+	<field name="sks" class="java.lang.Integer"/>
+	<field name="semester" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="273" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="db48e73a-d2fe-4791-8186-efd59c27923c" style="Title" x="111" y="13" width="402" height="33"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[STMIK DIPANEGARA MAKASSAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5112c648-4658-41e8-91c1-12fa38bd215a" style="SubTitle" x="155" y="46" width="260" height="22"/>
+				<textElement/>
+				<text><![CDATA[JL.Perintis Kemerdekaan KM.09]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5112c648-4658-41e8-91c1-12fa38bd215a" style="SubTitle" x="216" y="110" width="124" height="22" forecolor="#000000"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JADWAL KULIAH ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5112c648-4658-41e8-91c1-12fa38bd215a" style="SubTitle" x="0" y="166" width="43" height="22" forecolor="#000000"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5112c648-4658-41e8-91c1-12fa38bd215a" style="SubTitle" x="0" y="210" width="69" height="22" forecolor="#000000"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[STAMBUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5112c648-4658-41e8-91c1-12fa38bd215a" style="SubTitle" x="0" y="251" width="81" height="22" forecolor="#000000"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[TAHUN AJAR]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="006ff95a-c5b9-4b68-a8ee-c3a31b71de8f" x="1" y="99" width="554" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="3ff59a66-a341-4b71-832f-b1011f2accd6" x="126" y="166" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c537cb59-f9c7-4e84-9aa0-83ac841a7de1" x="127" y="210" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{stb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1db3aafd-25d1-48c9-9425-0a111c785976" x="127" y="251" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{thn_ajar}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="49bf9f72-1dc2-4b81-a692-9e2acd8a1767" x="33" y="13" width="78" height="69"/>
+				<imageExpression><![CDATA["D:\\Tugas\\Semester 5\\Java\\akademik\\src\\akademik\\th.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="09dc96ee-b939-412e-985e-f5fbae2e4ebd" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="0ea6be6f-ad79-48fa-a65e-1c4badd09ec4" style="Column header" x="0" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Kode Matkul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e710ed0e-f1d6-453e-b0f1-aa22e378cb39" style="Column header" x="61" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Nama Matkul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="df49535c-3931-4326-b772-b64db63b82ae" style="Column header" x="122" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Nip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ffd43d49-8a3e-46e1-aef6-6455d3b9e0e9" style="Column header" x="183" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Hari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e8f132e-0b69-4d1e-a0fa-1d0f660eadcd" style="Column header" x="244" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Jam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ab2522d6-bfc4-4437-82f9-96d4d14abf95" style="Column header" x="305" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Ruangan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d17ac9ee-1b77-4dfe-ac79-23aae290f4c5" style="Column header" x="366" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a2f43ad-c506-418e-a1de-da732f9cecc1" style="Column header" x="427" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Sks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad88166e-4acf-43fb-a94c-c9d46f184c39" style="Column header" x="488" y="19" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Semester]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="d538fb3b-0a2d-4db3-ade1-0cd39e7834dc" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="7d73e774-92a4-4abb-b90c-1e16786fa03d" style="Detail" x="0" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kode_matkul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="78d03fc2-74f0-482d-bf8b-b3c036b21605" style="Detail" x="61" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nama_matkul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4449f9e0-8a77-4f47-87ae-c7c48e7f04c7" style="Detail" x="122" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e9f10526-c84a-4c62-99df-602f65bb4fc6" style="Detail" x="183" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{hari}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8ee5e86b-1df8-4788-9157-0b8f8bf8c72c" style="Detail" x="244" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{jam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="df035316-30c8-4ea5-8989-1677473bb008" style="Detail" x="305" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ruangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="695c6c47-4bc5-4294-a581-49eabc15481a" style="Detail" x="366" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="193550c1-21fd-4769-b21d-a47c337a774f" style="Detail" x="427" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="db356722-80e8-47a3-845b-47f1369d1d3a" style="Detail" x="488" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{semester}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="e51f6cfe-a344-4595-9908-da58933921af" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="8611e0c0-e851-422c-8986-bd77c0e0e578" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b3d92a9e-d444-4b1e-9852-9a9ebad3c6bc" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="e670d841-5741-4347-bc1c-bb5d4a87f68d" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
